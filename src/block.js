@@ -20,8 +20,8 @@ class Block {
      * modified block and all subsequent ones.
      */
     generateHash() {                
-        return SHA256(JSON.stringify(this)).toString();
-    }    
+        return SHA256(this.timestamp + this.previousHash + JSON.stringify(this.data)).toString();
+    }        
 }
 
 module.exports = Block;

@@ -19,6 +19,27 @@ class Blockchain {
         newBlock.hash = newBlock.generateHash();
         this.chain.push(newBlock)
     }
+
+    validate() {                
+        for(let i = 1 ; i < this.chain.length ; i++){
+            const currentBlock = this.chain[i];
+            const previousBlock = this.chain[i - 1];
+
+            console.log(currentBlock)
+            console.log(currentBlock.generateHash())
+
+            if(currentBlock.hash !== currentBlock.generateHash()){
+                return false;
+            }
+
+            if(currentBlock.previousHash !== previousBlock.hash){
+                return false;
+            }
+
+            return true;
+        }
+    }
+
     
 }
 

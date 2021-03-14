@@ -9,3 +9,8 @@ myPrivateBlockchain.addBlock(new Block({ ammount: 50 }))
 
 console.log(JSON.stringify(myPrivateBlockchain, null, 4))
 
+console.log(myPrivateBlockchain.validate());
+
+myPrivateBlockchain.chain[1].data = { ammount: 11 }
+
+console.log(myPrivateBlockchain.validate());

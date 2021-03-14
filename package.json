@@ -1,0 +1,8 @@
+{
+  "name": "myBlockchainJs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:luizoamorim/nodejs_blockchain.git",
+  "author": "Luiz <luiz.oamorim@gmail.com>",
+  "license": "MIT"
+}

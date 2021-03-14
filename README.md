@@ -18,3 +18,6 @@ In this project I'll show its main concepts:
 - memory pool;
 - consensus algorithms and mining;
 - sign a transaction;
+
+
+

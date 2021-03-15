@@ -7,6 +7,7 @@ class Block {
         this.data = data;
         this.previousHash = previousHash;
         this.hash = this.generateHash();
+        this.nonce = 0;
     }
 
     /**
@@ -20,8 +21,17 @@ class Block {
      * modified block and all subsequent ones.
      */
     generateHash() {                
-        return SHA256(this.timestamp + this.previousHash + JSON.stringify(this.data)).toString();
-    }        
+        return SHA256(this.timestamp + this.previousHash + JSON.stringify(this.data) + this.nonce).toString();
+    }
+
+    mineBlock(difficulty) {
+        while(this.hash.substring(0, difficulty) !== Array(difficulty + 1).join('0')){
+            this.nonce++;
+            this.hash = this.generateHash();
+        }
+
+        console.log(`Block mined: ${this.hash}`)
+    }
 }
 
 module.exports = Block;
